@@ -37,7 +37,7 @@ was no memory it had ever existed.
 **Findings are data, not prose.** Every finding gets a stable ID
 (`CIS-XXXXXXX`), a severity (P0/P1/P2/P3), a project, a rule ID, a
 status (open/resolved), and a timestamp. Now you can query "all open P0s
-in <FinanceFlow>", "all CIS-25761 occurrences fleet-wide", "issues older
+in FinanceFlow", "all CIS-25761 occurrences fleet-wide", "issues older
 than 7 days".
 
 ### Why this approach, not the obvious one

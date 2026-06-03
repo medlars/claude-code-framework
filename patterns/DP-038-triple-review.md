@@ -90,7 +90,7 @@ Task(subagent_type="codex:codex-rescue",
 
 ## Example
 
-User asks: "Set up DMARC for [your-domain.com]."
+User asks: "Set up DMARC for vohux.com."
 
 Without triple review: model writes a generic DMARC record, applies it,
 breaks existing email forwarding because it didn't check that an SPF
@@ -101,7 +101,7 @@ With triple review:
    level → yes.
 2. **Contradiction**: queries existing DNS → finds existing
    `v=spf1 include:third-party.example -all` from Workspace.
-3. **Reality**: existing DMARC at `_dmarc.[your-domain.com]` is `p=none` (in
+3. **Reality**: existing DMARC at `_dmarc.vohux.com` is `p=none` (in
    monitoring mode) → preserve the rua/ruf addresses; tighten policy
    only after observation window.
 

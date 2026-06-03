@@ -34,8 +34,8 @@ expert at everything.
 
 ### The insight that unlocked the solution
 **Match specialists to domains via trigger maps.** "Edited a Swift file
-in <SagaMail>" → spawn `swift-specialist`. "Edited a GAS file in
-<FinanceFlow>" → spawn `financeflow-specialist`. Trigger maps in
+in SagaMail" → spawn `swift-specialist`. "Edited a GAS file in
+FinanceFlow" → spawn `financeflow-specialist`. Trigger maps in
 `agents-protocol.md` make this deterministic.
 
 ### Why this approach, not the obvious one
@@ -55,7 +55,7 @@ forgets.
 
 A generalist agent re-derives domain context every time. A specialist
 agent has the domain pre-loaded in its CONTEXT.md and SKILL.md. For
-familiar codebases (Swift in <SagaMail>, Apps Script in <FinanceFlow>), the
+familiar codebases (Swift in SagaMail, Apps Script in FinanceFlow), the
 specialist beats the generalist on first-shot accuracy. METR (Jul 2025)
 found AI tools are 19% slower on familiar codebases — the specialist
 agent mitigates this by pre-loading domain knowledge.
@@ -66,14 +66,14 @@ agent mitigates this by pre-loading domain knowledge.
 
 | Trigger | Agent |
 |---------|-------|
-| Swift code / <SagaMail> / <PanoMac> / XCTest | `swift-specialist` |
-| <FinanceFlow> / SpreadsheetRouter / ColumnMapper | `financeflow-specialist` |
+| Swift code / SagaMail / PanoMac / XCTest | `swift-specialist` |
+| FinanceFlow / SpreadsheetRouter / ColumnMapper | `financeflow-specialist` |
 | CIS issue / P0 escalation | `cis-analyst` |
 | GAS / Apps Script / `*.gs` / clasp | `apps-script-specialist` |
-| <Moonitor> channel / LaunchAgent | `moonitor-ops` |
+| Moonitor channel / LaunchAgent | `moonitor-ops` |
 | `git blame` / "why does this exist?" | `git-historian` |
 | Verscout desktop / Sparkle / LemonSqueezy | `verscout-specialist` |
-| <CorpBooks> / Canadian tax / RDTOH | `corpbooks-specialist` |
+| CorpBooks / Canadian tax / RDTOH | `corpbooks-specialist` |
 | MCP server / `mcp__*` tools | `mcp-specialist` |
 
 **Anti-duplicate rule:** "Never duplicate — don't run an agent on code
@@ -86,13 +86,13 @@ one-offs. (Source: METR's 19% finding + 2026-04 owner directive.)
 
 ## Example
 
-User asks: "Fix the OAuth token refresh in <SagaMail>."
+User asks: "Fix the OAuth token refresh in SagaMail."
 
 Dispatch:
-1. Match: "<SagaMail>" + "OAuth" → `swift-specialist` (<SagaMail> is Swift)
+1. Match: "SagaMail" + "OAuth" → `swift-specialist` (SagaMail is Swift)
    + `security-auditor` (OAuth is security)
 2. Spawn in parallel.
-3. Each agent reads <SagaMail>'s CLAUDE.md + relevant sources.
+3. Each agent reads SagaMail's CLAUDE.md + relevant sources.
 4. `swift-specialist` produces the patch; `security-auditor` reviews.
 
 ## Related patterns

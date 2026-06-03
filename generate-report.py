@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.14
-"""Generate a narrative report of the [Your Company] Claude Code engineering system.
+"""Generate a narrative report of the Vohux Claude Code engineering system.
 
 Reads INDEX.md and every patterns/DP-NNN-*.md file in this registry, then
 emits a structured Markdown report tailored to the requested audience.
@@ -214,7 +214,7 @@ def render_pattern(p: Pattern, *, audience: str = "tech") -> str:
 def render_tech(patterns: list[Pattern]) -> str:
     """Full technical report for developers, grouped by category."""
     out: list[str] = []
-    out.append(_h(1, "[Your Company] Engineering System — Technical Report"))
+    out.append(_h(1, "Vohux Engineering System — Technical Report"))
     out.append(
         f"*Generated from {len(patterns)} design patterns under "
         f"`{PATTERNS_DIR.relative_to(Path.home())}`.*\n\n"
@@ -230,7 +230,7 @@ def render_tech(patterns: list[Pattern]) -> str:
 def render_lay(patterns: list[Pattern]) -> str:
     """Plain-English report for non-technical readers."""
     out: list[str] = []
-    out.append(_h(1, "[Your Company] Engineering System — Plain English"))
+    out.append(_h(1, "Vohux Engineering System — Plain English"))
     out.append(
         "This report explains how one physician runs a software fleet with an "
         "AI coding assistant. Each section is a discipline or mechanism that "
@@ -287,7 +287,7 @@ def render_youtube(patterns: list[Pattern]) -> str:
 def render_full(patterns: list[Pattern]) -> str:
     """Everything in one document: tech report + lay report + youtube seeds."""
     parts: list[str] = []
-    parts.append(_h(1, "[Your Company] Claude Code Engineering System — Full Report"))
+    parts.append(_h(1, "Vohux Claude Code Engineering System — Full Report"))
     parts.append(
         f"*Sourced from {len(patterns)} design patterns + episode seeds. "
         "Suitable for sharing.*\n\n"

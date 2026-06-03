@@ -24,7 +24,7 @@ record.
 
 ### The problem we kept hitting
 The same bug class kept resurfacing in different projects: bare
-`except: pass`, hardcoded `~/` paths, missing test files,
+`except: pass`, hardcoded `/Users/eiman/` paths, missing test files,
 secrets in `.env`. Each one took 10-30 minutes to debug *every time*. By
 the third occurrence in a different project, it was no longer a bug — it
 was a process failure.
@@ -59,7 +59,7 @@ because new projects pick up WatchTools via `project-forge`.
 ## Why we use it
 
 A bug fixed once teaches one project. A bug encoded as a detector teaches
-the fleet, forever. The [Your Company] fleet has 81 projects; a fix at the project
+the fleet, forever. The Vohux fleet has 81 projects; a fix at the project
 level is N=1, but a fix at the detector level is N=81.
 
 The pattern's principle: **the cost of building a detector pays back the

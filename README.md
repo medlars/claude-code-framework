@@ -1,37 +1,11 @@
-# Claude Code Engineering Framework
+# Claude Code Design Patterns Registry
 
-> A comprehensive system of design patterns, workflows, and governance mechanisms
-> for managing large-scale software projects with Claude Code.
+> Single source of truth for all engineering patterns, mechanisms, workflows,
+> and disciplines built by Eiman Rahimi (Vohux Inc) on top of Claude Code
+> across 81+ projects and 500+ sessions (Dec 2025 – May 2026).
 >
-> Built and refined over 12+ months across 80+ projects. Freely available for
-> anyone who wants to adopt these techniques.
-
-## What This Is
-
-A production-tested registry of 40 engineering design patterns covering
-governance, detection, execution, enforcement, quality, security, workflow,
-and anti-patterns — all built on top of Claude Code.
-
-The patterns emerged from running 80+ software projects in parallel with a
-single AI assistant. They solve the hard problem: how do you turn a chat
-interface into an industrial-grade software delivery system?
-
-## Quick Start
-
-```bash
-git clone https://github.com/[your-username]/claude-code-framework
-cd claude-code-framework
-python3 generate-report.py --audience tech   # Full technical guide
-python3 generate-report.py --audience lay    # Plain-English overview
-python3 generate-report.py --youtube         # 40 episode seeds
-```
-
-## License
-
-MIT License — use freely, attribution appreciated.
-
----
-
+> Registered in Constitution as SPEC-181.
+> Location: `~/Projects/shared/design-patterns/`
 > Sister files: `INDEX.md` (machine-readable), `patterns/DP-NNN-*.md` (one file per pattern),
 > `TEMPLATE.md` (copy-this for new patterns), `generate-report.py` (narrative renderer).
 
@@ -248,12 +222,32 @@ AI** that turns a chat tool into an industrial-grade software fleet.
 | DP-038 | Triple Review Protocol (functionality + contradiction + reality) | quality | intermediate |
 | DP-039 | Plan/Programmer two-persona split | workflow | beginner |
 | DP-040 | Lessons-as-injected-context (lazy load on demand) | enforcement | advanced |
+| DP-041 | Newsletter preheader snippet filter (inbox preview protection) | detection | beginner |
+| DP-042 | Progressive image-unblock UX (all-folders Load + guarded Trust) | security | beginner |
+| DP-043 | Assumption of Name Equivalence Between Package Manager Token | detection | intermediate |
+| DP-044 | Missing Input Pathway in Multi-Source Detection Pipeline | workflow | intermediate |
+| DP-045 | Missing Input Source in Multi-Path Pipeline | workflow | intermediate |
+| DP-046 | Assumption of Identity Equivalence Between Identifier and Resource | anti-pattern | intermediate |
+| DP-047 | Cascading Context-Blind Code Transformation Pipeline | anti-pattern | intermediate |
+| DP-048 | Incomplete Scaffold Handoff Without Implementation Tracking | project-structure | intermediate |
+| DP-049 | Intentional Scaffold Without Implementation Guard | project-structure | intermediate |
+| DP-050 | Heredoc Subshell Literal Regex Capture | enforcement | intermediate |
+| DP-051 | Monkeypatch hasattr/getattr Leak | enforcement | intermediate |
+| DP-052 | WKWebView Custom Scheme Isolation | security | intermediate |
+| DP-053 | Playwright Browser Mismatch Across Package Instances | project-structure | intermediate |
+| DP-054 | Safety-Critical Hook Classification | enforcement | intermediate |
+| DP-055 | Hook Fixture Harness with Post-Write Validation | enforcement | intermediate |
+| DP-056 | Lesson Promotion Pipeline | enforcement | intermediate |
+| DP-057 | Untested Hook Infrastructure with Silent Logic Degradation | quality | intermediate |
+| DP-058 | Edit-region-scoped advisory detectors (signal over file-wide noise) | skills-agents-hooks | intermediate |
+| DP-059 | Untested Hook Scripts Without Automated Validation | anti-pattern | intermediate |
+| DP-060 | Detector-gap auto-pipeline (error → spec → detector → prevention) | detection | intermediate |
 
 ---
 
 ## Generating YouTube episodes from patterns
 
-The YouTube channel covers "how a solo engineer runs a software fleet
+The Vohux YouTube channel covers "how a solo physician runs a software fleet
 with Claude Code". Each pattern in this registry seeds at least one episode:
 
 1. Open `categories/12-youtube-episodes/episode-seeds.md`.
@@ -306,7 +300,7 @@ python3.14 generate-report.py --youtube > /tmp/episode-pitch.md
 ## Public release note
 
 A redacted, dedacted version of this registry will be released on GitHub
-under the [Your Company] organization. Patterns are written assuming the reader has
+under the Vohux organization. Patterns are written assuming the reader has
 never seen this codebase and wants to adopt the techniques. Replace
-project-specific names (<FinanceFlow>, Verscout, etc.) with `<project>` when
+project-specific names (FinanceFlow, Verscout, etc.) with `<project>` when
 porting to a different codebase.

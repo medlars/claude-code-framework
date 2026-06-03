@@ -23,15 +23,17 @@ introduced: 2026-MM                     # YYYY-MM the pattern was first validate
   5. Add a one-line row to `README.md`'s catalog table.
   6. Add at least one episode seed to
      `categories/12-youtube-episodes/episode-seeds.md`.
-  7. If the pattern has an enforcement mechanism, register it in Constitution:
+  7. If the pattern has an enforcement mechanism, register it in Constitution
+     via `process-new-rule` (the `add-rule` flags in older docs are stale —
+     the CLI changed and no longer accepts `--type`, `--title`, etc.):
 
-       echo "y" | python3.14 ~/Projects/Constitution/constitution.py add-rule \
-         --type specification \
-         --title "DP-NNN: <name>" \
-         --description "<one-line>" \
-         --check-pattern "NONE" \
-         --enforcement "documentation" \
-         --category "<category>"
+       python3.14 ~/Projects/Constitution/constitution.py process-new-rule \
+         "DP-NNN: <pattern name> — <one-line description>" \
+         --project global
+
+     Or use the Constitution inbox if the pattern is complex:
+     write a `.json` to `~/Projects/Constitution/inbox/` and run
+     `python3.14 ~/Projects/Constitution/constitution.py add-instruction --from-inbox <file>`.
 
   8. If the pattern surfaces a NEW anti-pattern, append `AP-NNN` to
      `~/Projects/shared/anti-patterns.md`.
@@ -51,7 +53,7 @@ introduced: 2026-MM                     # YYYY-MM the pattern was first validate
 ### The problem we kept hitting
 
 <!-- The specific friction, failure mode, or repeated mistake. Name actual
-     incidents if known (e.g. "2026-04-25 DNS migration nuked [your-domain.com] mail"). -->
+     incidents if known (e.g. "2026-04-25 DNS migration nuked clinic-north-example.ca mail"). -->
 
 ### What we tried first (and why it didn't work)
 

@@ -22,9 +22,9 @@ applicable to others, the CEO flags every PM that lacks it. A
 *The story of how this pattern came to exist and why it was chosen over alternatives.*
 
 ### The problem we kept hitting
-A fix landed in <FinanceFlow> that should have been applied to <MoeMoney>
-and <CorpBooks> (all three use the same shared-libs PM base). Nobody
-remembered to propagate. Six weeks later the same bug bit <MoeMoney> in
+A fix landed in FinanceFlow that should have been applied to MoeMoney
+and CorpBooks (all three use the same shared-libs PM base). Nobody
+remembered to propagate. Six weeks later the same bug bit MoeMoney in
 production.
 
 ### What we tried first (and why it didn't work)
@@ -55,7 +55,7 @@ not mandatory — the human signs off on each propagation.
 
 ## Why we use it
 
-Without this rule, <FinanceFlow> gets a new `stage_chaos` and the other 8
+Without this rule, FinanceFlow gets a new `stage_chaos` and the other 8
 PMs stagnate. Six months later, only one project has chaos coverage and
 the fleet drifts into 81 personal styles. Propagation enforces the
 invariant: **anything useful in one PM is owed to every applicable PM.**
@@ -66,8 +66,8 @@ invariant: **anything useful in one PM is owed to every applicable PM.**
 
 ```python
 PROPAGATION_PATTERNS = [
-    ("stage_contract_test", {"<FinanceFlow>": True, "<CorpBooks>": True, "<MoeMoney>": True, ...}),
-    ("stage_chaos",         {"<FinanceFlow>": True, "<CorpBooks>": True, "<MoeMoney>": True, "<EpicVDI>": True}),
+    ("stage_contract_test", {"FinanceFlow": True, "CorpBooks": True, "MoeMoney": True, ...}),
+    ("stage_chaos",         {"FinanceFlow": True, "CorpBooks": True, "MoeMoney": True, "EpicVDI": True}),
     ("stage_ux",            {<all visual products>: True}),
     ("stage_runtime",       {<all daemon products>: True}),
     ...
@@ -78,9 +78,9 @@ PROPAGATION_PATTERNS = [
 and prints:
 
 ```
-DRIFT: stage_chaos missing in <MoeMoney> (applies_to=True)
-DRIFT: stage_chaos missing in <EpicVDI> (applies_to=True)
-OK:    stage_contract_test present in <FinanceFlow>, <CorpBooks>, <MoeMoney>
+DRIFT: stage_chaos missing in MoeMoney (applies_to=True)
+DRIFT: stage_chaos missing in EpicVDI (applies_to=True)
+OK:    stage_contract_test present in FinanceFlow, CorpBooks, MoeMoney
 ```
 
 When `applies_to` is False (e.g. Constitution has no UI → `stage_ux=False`),
@@ -88,7 +88,7 @@ it's exempted. Exemptions are explicit data, not silent skips.
 
 ## Example
 
-A new `stage_silent_failure_check` lands in <FinanceFlow>'s PM. The owner
+A new `stage_silent_failure_check` lands in FinanceFlow's PM. The owner
 adds one line to `ceo.py`:
 
 ```python

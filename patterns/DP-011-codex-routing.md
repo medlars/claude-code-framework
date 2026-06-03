@@ -84,14 +84,14 @@ relevant files) so its subsequent turns can reuse the cache.
 
 Bad (Claude inline, hits usage limit):
 ```
-"Refactor all 22 <FinanceFlow> .gs files to use SpreadsheetRouter."
+"Refactor all 22 FinanceFlow .gs files to use SpreadsheetRouter."
 → Claude edits 22 files, 2000 lines, consumes 80K tokens
 ```
 
 Good (Codex):
 ```
 Task(subagent_type="codex:codex-rescue",
-     prompt="Refactor all 22 <FinanceFlow> .gs files to use SpreadsheetRouter
+     prompt="Refactor all 22 FinanceFlow .gs files to use SpreadsheetRouter
              instead of getActiveSpreadsheet(). Run tests. Report a summary.")
 → Claude consumes ~500 tokens for the task call + summary
 ```

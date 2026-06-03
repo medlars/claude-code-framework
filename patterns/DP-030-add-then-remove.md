@@ -25,7 +25,7 @@ verify the new path actually serves real traffic, then remove the old.
 
 ### The problem we kept hitting
 Migrations went wrong in catastrophic ways. The 2026-04-25 DNS migration
-nuked [your-domain.com] mail because the old MX was removed before the new one
+nuked clinic-north-example.ca mail because the old MX was removed before the new one
 was verified. The ICANN compliance email arrived during the cutover and
 was missed, auto-suspending the domain for 4 days.
 
@@ -84,17 +84,17 @@ migrations — read the existing setup before adding anything.
 
 ## Example
 
-DNS cutover for `docs.[your-domain.com]` to a new Cloudflare Pages site:
+DNS cutover for `docs.vohux.com` to a new Cloudflare Pages site:
 
 ```bash
 # Bad
-delete-existing-cname docs.[your-domain.com]   # ← outage starts here
-add-cname docs.[your-domain.com] → new-target  # ← finish line, but TTL still propagating
+delete-existing-cname docs.vohux.com   # ← outage starts here
+add-cname docs.vohux.com → new-target  # ← finish line, but TTL still propagating
 
 # Good
-add-cname docs.[your-domain.com].staging → new-target  # parallel
-curl -H "Host: docs.[your-domain.com]" https://new-target  # verify
-update-cname docs.[your-domain.com] → new-target
+add-cname docs.vohux.com.staging → new-target  # parallel
+curl -H "Host: docs.vohux.com" https://new-target  # verify
+update-cname docs.vohux.com → new-target
 # (wait 24h)
 remove staging entry
 ```

@@ -41,7 +41,7 @@ cross-project imports at scan time and files a P0.
 
 ### Why this approach, not the obvious one
 *Why not allow imports between related projects?* Because "related"
-drifts. Today <FinanceFlow> ↔ <CorpBooks> are related; tomorrow <CorpBooks>
+drifts. Today FinanceFlow ↔ CorpBooks are related; tomorrow CorpBooks
 spins out. The boundary keeps projects independently releasable.
 
 ### Evidence that it works
@@ -51,8 +51,8 @@ spins out. The boundary keeps projects independently releasable.
 
 ## Why we use it
 
-Cross-project imports create invisible coupling. <FinanceFlow> importing
-from <CorpBooks> means changing <CorpBooks> can silently break <FinanceFlow>.
+Cross-project imports create invisible coupling. FinanceFlow importing
+from CorpBooks means changing CorpBooks can silently break FinanceFlow.
 Boundaries enforce that shared code is *intentional* and *versioned*.
 
 ## How it works
@@ -84,14 +84,14 @@ scripts/ceo.py      ← orchestrator (knows all projects, but projects don't kno
 
 **Coordination of breaking changes**: when `shared-libs/pm-base` changes
 breakingly, fleet-wide CEO sweep verifies every PM still works. Three
-projects depend most heavily: <FinanceFlow>, <CorpBooks>, <MoeMoney>.
+projects depend most heavily: FinanceFlow, CorpBooks, MoeMoney.
 
 ## Example
 
 Bad (cross-project):
 ```python
-# In <CorpBooks>/src/tax.py
-from <FinanceFlow>.src.categorizer import categorize_expense  # ← BW001
+# In CorpBooks/src/tax.py
+from FinanceFlow.src.categorizer import categorize_expense  # ← BW001
 ```
 
 Good (via shared-libs):

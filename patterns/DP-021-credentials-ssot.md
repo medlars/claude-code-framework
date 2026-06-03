@@ -13,8 +13,8 @@ introduced: 2026-04
 
 All API keys and secrets live in **one file**: `~/Projects/.env.shared`.
 Editing a key there + running `./sync-credentials.sh --all` propagates
-to every project that needs it (<FinanceFlow>/.env, Verscout/.env,
-<MoeMoney>/.env.upstash, <EpicVDI>/.env, <Moonitor> launchd plist, GCE
+to every project that needs it (FinanceFlow/.env, Verscout/.env,
+MoeMoney/.env.upstash, EpicVDI/.env, Moonitor launchd plist, GCE
 metadata, etc.). Never edit project `.env` files directly.
 
 ## Rationale — Why We Adopted This Pattern
@@ -62,7 +62,7 @@ operation, not a 30-minute scavenger hunt.
 **The sync script (`~/Projects/sync-credentials.sh`):**
 - Reads `.env.shared`
 - Writes per-target subsets (each project gets only the keys it needs)
-- Reloads daemons (launchd unload+load for <Moonitor>)
+- Reloads daemons (launchd unload+load for Moonitor)
 - Writes to GCE metadata for cloud-deployed services
 - Prints a manual-paste reminder for Apps Script (which can't be
   programmatically updated)
@@ -71,11 +71,11 @@ operation, not a 30-minute scavenger hunt.
 
 | Target | Keys |
 |--------|------|
-| <FinanceFlow>/.env | AI keys, ABBYY, Netlify |
+| FinanceFlow/.env | AI keys, ABBYY, Netlify |
 | Verscout/.env + web/.env.local | LemonSqueezy, Supabase |
-| <MoeMoney>/.env.upstash | Upstash Redis tokens |
-| <Moonitor> plist | ANTHROPIC_API_KEY (triggers daemon reload) |
-| <Moonitor> GCE | ANTHROPIC_API_KEY (with --gce) |
+| MoeMoney/.env.upstash | Upstash Redis tokens |
+| Moonitor plist | ANTHROPIC_API_KEY (triggers daemon reload) |
+| Moonitor GCE | ANTHROPIC_API_KEY (with --gce) |
 
 **Backup:** `~/Projects/backup-env-shared.sh` snapshots `.env.shared` to
 a private location before sync; weekly launchd job.

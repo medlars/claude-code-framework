@@ -75,12 +75,12 @@ results are sequential.
 
 ## Example
 
-Pre-push for <SagaMail>:
+Pre-push for SagaMail:
 
 ```
 # In a single message, three Task calls:
-Task(subagent_type="security-auditor", prompt="audit <SagaMail> for OAuth bugs")
-Task(subagent_type="perf-optimizer",   prompt="profile <SagaMail> message render path")
+Task(subagent_type="security-auditor", prompt="audit SagaMail for OAuth bugs")
+Task(subagent_type="perf-optimizer",   prompt="profile SagaMail message render path")
 Task(subagent_type="test-writer",      prompt="cover new IMAP retry logic with tests")
 
 # Wall-clock: max(t1, t2, t3) instead of sum

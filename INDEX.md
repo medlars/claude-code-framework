@@ -4,8 +4,8 @@
 # README.md and per-category directories.
 
 version: "1.0"
-generated: 2026-05-31
-total_patterns: 40
+generated: 2026-06-01
+total_patterns: 52
 schema: |
   patterns[]:
     id: DP-NNN
@@ -461,3 +461,188 @@ patterns:
     introduced: 2026-05
     file: patterns/DP-040-lessons-injection.md
     related: [DP-013, DP-033]
+
+  - id: DP-041
+    name: Newsletter preheader snippet filter (inbox preview protection)
+    category: detection
+    status: active
+    constitution_rules: [DETE-001]
+    youtube_difficulty: beginner
+    youtube_length: short
+    introduced: 2026-05
+    file: patterns/DP-041-newsletter-preheader-snippet-filter.md
+    related: [DP-005, DP-008, DP-034]
+
+  - id: DP-042
+    name: Progressive image-unblock UX (all-folders Load + guarded Trust)
+    category: security
+    status: active
+    constitution_rules: [SEC-001]
+    youtube_difficulty: beginner
+    youtube_length: short
+    introduced: 2026-05
+    file: patterns/DP-042-progressive-image-unblock-ux.md
+    related: [DP-028, DP-030, DP-034]
+  - id: DP-043
+    name: Assumption of Name Equivalence Between Package Manager Token
+    category: detection
+    status: active
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: short
+    introduced: 2026-05
+    file: patterns/DP-043-package-token-bundle-name-mismatch.md
+    related: [DP-011, DP-029, DP-038]
+
+  - id: DP-044
+    name: Missing Input Pathway in Multi-Source Detection Pipeline
+    category: workflow
+    status: active
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: short
+    introduced: 2026-05
+    file: patterns/DP-044-missing-input-pathway-detection-pipeline.md
+    related: [DP-008, DP-017]
+
+  - id: DP-045
+    name: Missing Input Source in Multi-Path Pipeline
+    category: workflow
+    status: proposed
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: short
+    introduced: 2026-05
+    file: patterns/DP-045-missing-input-source-multi-path-pipeline.md
+    related: [DP-017, DP-029]
+
+  - id: DP-046
+    name: Assumption of Identity Equivalence Between Identifier and Resource
+    category: anti-pattern
+    status: proposed
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: short
+    introduced: 2026-05
+    file: patterns/DP-046-identifier-name-equivalence-assumption.md
+    related: [DP-017, DP-029, DP-043]
+
+  - id: DP-047
+    name: Cascading Context-Blind Code Transformation Pipeline
+    category: anti-pattern
+    status: proposed
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: short
+    introduced: 2026-05
+    file: patterns/DP-047-cascading-context-blind-code-transformat.md
+    related: [DP-048]
+
+  - id: DP-048
+    name: Incomplete Scaffold Handoff Without Implementation Tracking
+    category: project-structure
+    status: proposed
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: short
+    introduced: 2026-06
+    file: patterns/DP-048-incomplete-scaffold-handoff-without-trac.md
+    related: [DP-049]
+
+  - id: DP-049
+    name: Intentional Scaffold Without Implementation Guard
+    category: project-structure
+    status: active
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: short
+    introduced: 2026-06
+    file: patterns/DP-049-scaffold-without-implementation-guard.md
+    related: [DP-048]
+
+  - id: DP-050
+    name: Heredoc in subshell captured as literal string in regex extr
+    category: anti-pattern
+    status: proposed
+    file: patterns/DP-050-heredoc-subshell-literal-regex-capture.md
+
+  - id: DP-051
+    name: monkeypatch-getattr-shadowing-via-hasattr-detection
+    category: anti-pattern
+    status: proposed
+    file: patterns/DP-051-monkeypatch-hasattr-getattr-leak.md
+
+  - id: DP-052
+    name: Custom URL Scheme Isolation in WebView
+    category: execution
+    status: proposed
+    file: patterns/DP-052-webview-custom-scheme-isolation.md
+
+  - id: DP-053
+    name: Playwright Browser Mismatch Across Package Instances
+    category: project-structure
+    status: proposed
+    file: patterns/DP-053-playwright-browser-mismatch-multi-instal.md
+
+  - id: DP-054
+    name: Safety-Critical Hook Classification
+    category: enforcement
+    status: active
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: medium
+    introduced: 2026-06
+    file: patterns/DP-054-safety-critical-hook-classification.md
+    related: [DP-013, DP-055]
+
+  - id: DP-055
+    name: Hook Fixture Harness with Post-Write Validation
+    category: enforcement
+    status: active
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: medium
+    introduced: 2026-06
+    file: patterns/DP-055-hook-fixture-harness.md
+    related: [DP-054, DP-013]
+
+  - id: DP-056
+    name: Lesson Promotion Pipeline
+    category: enforcement
+    status: active
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: medium
+    introduced: 2026-06
+    file: patterns/DP-056-lesson-promotion-pipeline.md
+    related: [DP-013, DP-040]
+
+  - id: DP-057
+    name: Untested Hook Infrastructure with Silent Logic Degradation
+    category: quality
+    status: proposed
+    file: patterns/DP-057-untested-hook-infrastructure-silent-fail.md
+
+  - id: DP-058
+    name: Edit-region-scoped advisory detectors (signal over file-wide noise)
+    category: skills-agents-hooks
+    status: active
+    file: patterns/DP-058-edit-region-scoped-detectors.md
+    related: [DP-013, DP-008, DP-055, DP-054]
+
+  - id: DP-059
+    name: Untested Hook Scripts Without Automated Validation
+    category: anti-pattern
+    status: proposed
+    file: patterns/DP-059-hook-scripts-missing-test-harness.md
+
+  - id: DP-060
+    name: Detector-gap auto-pipeline (error → spec → detector → prevention)
+    category: detection
+    status: active
+    constitution_rules: []
+    youtube_difficulty: intermediate
+    youtube_length: medium
+    introduced: 2026-06
+    file: patterns/DP-060-detector-gap-auto-pipeline.md
+    related: [DP-005, DP-007, DP-013, DP-040, DP-056]

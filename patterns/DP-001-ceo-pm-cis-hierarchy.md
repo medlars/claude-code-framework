@@ -33,8 +33,8 @@ By April 2026 the fleet had grown to 24 active projects plus 57 WatchTools
 phases. Each project had its own test-running convention, its own concept of
 "done", and its own ad-hoc PM script. There was no single place to ask
 "is the fleet green right now?" — answering it took 20 minutes of `cd` and
-`pytest`. Worse, a fix made in <FinanceFlow> never propagated to <MoeMoney>
-or <CorpBooks> even when the bug class was identical (e.g. the inline
+`pytest`. Worse, a fix made in FinanceFlow never propagated to MoeMoney
+or CorpBooks even when the bug class was identical (e.g. the inline
 `stage_cis_health` divergence in AP-013 hit three projects in succession).
 
 ### What we tried first (and why it didn't work)
@@ -115,11 +115,11 @@ another worker following the foreman's instructions.
 
 ## Example
 
-A typical edit cycle in <FinanceFlow>:
+A typical edit cycle in FinanceFlow:
 
 ```bash
 # 1. Engineer edits a .gs file
-vim <FinanceFlow>/src/SpreadsheetRouter.gs
+vim FinanceFlow/src/SpreadsheetRouter.gs
 
 # 2. PostToolUse hook fires PM --touched (auto)
 ceo-supervisor-hook.sh → python3.14 scripts/financeflow-pm.py --touched

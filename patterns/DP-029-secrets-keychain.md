@@ -62,7 +62,7 @@ secret. Keychain provides:
 ```bash
 security add-generic-password \
   -a $USER \
-  -s "myapp-imap-[your-username]-gmail" \
+  -s "saga-mail-imap-owner-gmail" \
   -w "$IMAP_TOKEN"
 ```
 
@@ -83,23 +83,23 @@ def get_keychain_secret(service: str) -> str:
 - `block-keychain-dump.sh` (PreToolUse:Bash) — blocks
   `security dump-keychain`.
 
-**Per-account isolation:** <SagaMail>'s 40-account architecture uses one
+**Per-account isolation:** SagaMail's 40-account architecture uses one
 Keychain item per account; never a single multi-account secrets file.
 
 ## Example
 
-OAuth refresh token for Gmail account `[your-email@example.com]`:
+OAuth refresh token for Gmail account `owner@example.com`:
 
 ```bash
 # Store
 security add-generic-password \
-  -a [your-email@example.com] \
+  -a owner@example.com \
   -s "sagamail-gmail-oauth-refresh" \
   -w "$REFRESH_TOKEN"
 
 # Retrieve
 TOKEN=$(security find-generic-password \
-  -a [your-email@example.com] \
+  -a owner@example.com \
   -s "sagamail-gmail-oauth-refresh" -w)
 ```
 
@@ -123,6 +123,6 @@ TOKEN=$(security find-generic-password \
   keychain ACL lock to an ephemeral ad-hoc identity → every new build
   fails. Never use `-T ""`.
 - LESSONS 060: Same issue in Verscout — caused keychain reads to fail.
-- macOS 26 + <EmailManager>: Apple Mail-style apps need per-account
+- macOS 26 + EmailManager: Apple Mail-style apps need per-account
   storage; one item per (account_id, scope) tuple.
 - `security dump-keychain` is banned (would dump all secrets to text).

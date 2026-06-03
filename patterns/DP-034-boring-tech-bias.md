@@ -86,7 +86,7 @@ Need a queue? Choices:
 - **Boring**: Redis BLPOP, ~30 lines of code. Done.
 - **Novel**: try `arq` or `procrastinate` or some 2024 async lib.
 
-For [Your Company] infrastructure: Redis. The boring choice. The model knows it
+For Vohux infrastructure: Redis. The boring choice. The model knows it
 inside-out, the docs are mature, the failure modes are well-known.
 
 ## Related patterns
@@ -105,7 +105,7 @@ inside-out, the docs are mature, the failure modes are well-known.
 
 ## Known failure modes / lessons learned
 
-- The bias has exceptions: <SagaMail> uses Swift 6.3 strict concurrency
+- The bias has exceptions: SagaMail uses Swift 6.3 strict concurrency
   (novel) because the alternative (Objective-C) is older but worse.
   Novelty is sometimes correct — the bias is a default, not a law.
 - LESSONS 062: Fleet had no coding standard until ruff+pyright+mypy

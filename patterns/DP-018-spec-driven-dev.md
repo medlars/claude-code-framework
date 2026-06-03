@@ -126,7 +126,7 @@ Rules duplicate across CLAUDE.md files; drift undetected.
 
 ## Known failure modes / lessons learned
 
-- A spec without Rollback is incomplete. The [Your Company] rules.md adds
+- A spec without Rollback is incomplete. The Vohux rules.md adds
   Rollback as a hard requirement.
 - Specs get stale if not updated during the build. Stop hook reminds
   to verify.

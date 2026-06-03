@@ -93,14 +93,14 @@ hook.
 
 ## Example
 
-Rule: "Never use `getActiveSpreadsheet()` in <FinanceFlow> (use
+Rule: "Never use `getActiveSpreadsheet()` in FinanceFlow (use
 SpreadsheetRouter)."
 
-Without a hook: rule lives in <FinanceFlow>/CLAUDE.md, agent occasionally
+Without a hook: rule lives in FinanceFlow/CLAUDE.md, agent occasionally
 forgets, ships bug.
 
 With a hook: `financeflow-gate.sh` (PreToolUse:Write+Edit) matches
-`*.gs|*.html` under `<FinanceFlow>/`, greps for `getActiveSpreadsheet()`,
+`*.gs|*.html` under `FinanceFlow/`, greps for `getActiveSpreadsheet()`,
 returns exit 2 + a message. Bug cannot ship.
 
 ## Related patterns

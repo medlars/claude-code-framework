@@ -1,4 +1,4 @@
-# YouTube Episode Seeds — [Your Company] Channel
+# YouTube Episode Seeds — Vohux Channel
 
 > Source: every pattern in `~/Projects/shared/design-patterns/patterns/`
 > seeds at least one episode. 40+ episode candidates below — one or more
@@ -45,7 +45,7 @@
 - **Patterns**: DP-004
 - **Audience**: advanced
 - **Duration**: 12 min
-- **Hook**: A fix landed in <FinanceFlow>. Six weeks later the same bug bit <MoeMoney> in production. Here's the propagation system that stopped that forever.
+- **Hook**: A fix landed in FinanceFlow. Six weeks later the same bug bit MoeMoney in production. Here's the propagation system that stopped that forever.
 - **Takeaways**:
   - PROPAGATION_PATTERNS in `ceo.py` enumerate cross-PM patterns.
   - `--propagation-check` surfaces missing siblings without acting.
@@ -295,7 +295,7 @@
 - **Patterns**: DP-022
 - **Audience**: intermediate
 - **Duration**: 6 min
-- **Hook**: '<FinanceFlow>', 'financeflow', 'finance-flow', and 'ff' were four different projects in my CIS. Until I built the canonical-name SSoT.
+- **Hook**: 'FinanceFlow', 'financeflow', 'finance-flow', and 'ff' were four different projects in my CIS. Until I built the canonical-name SSoT.
 - **Takeaways**:
   - One JSON file holds canonical, aliases, root, PM path.
   - `project_resolver.py` is the choke-point.
@@ -435,6 +435,26 @@
   - Programmer executes with the wisest proven approach.
   - Explicit mode-switch reduces accidental ships.
 
+### EP-41: "Three emails looked identical in my inbox. Here's why."
+- **Patterns**: DP-041
+- **Audience**: beginner
+- **Duration**: 8 min
+- **Hook**: StackSocial, iPostal1, and TAAFT all showed the same preview text. Newsletter mailers hide tracker instructions as visible text — and my inbox was reading them.
+- **Takeaways**:
+  - Mailers embed image-tracker preheaders as the first readable body line.
+  - Gmail's snippet field faithfully passes this through.
+  - Three-line prefix filter restores distinct, meaningful inbox previews.
+
+### EP-42: "The security banner with no exit door"
+- **Patterns**: DP-042
+- **Audience**: beginner
+- **Duration**: 7 min
+- **Hook**: My spam folder said "images are blocked" with zero buttons. A legitimate email trapped there had no escape. Here's the right UX for image-blocking.
+- **Takeaways**:
+  - One-time override (Load Images) is always safe; show it everywhere.
+  - Persistent trust expansion (Always Trust Sender) is only safe outside spam/trash.
+  - Security controls without an escape hatch teach users to route around them.
+
 ---
 
 ## Production pipeline
@@ -451,7 +471,7 @@ For each episode:
 
 ## Difficulty distribution
 
-- **Beginner** (16): EP-10, EP-13, EP-20, EP-21, EP-23, EP-24, EP-26, EP-32, EP-33, EP-34, EP-35, EP-36, EP-37, EP-40
+- **Beginner** (18): EP-10, EP-13, EP-20, EP-21, EP-23, EP-24, EP-26, EP-32, EP-33, EP-34, EP-35, EP-36, EP-37, EP-40, EP-41, EP-42
 - **Intermediate** (16): EP-01, EP-02, EP-05, EP-07, EP-08, EP-11, EP-12, EP-14, EP-16, EP-19, EP-22, EP-25, EP-27, EP-29, EP-30, EP-31, EP-38
 - **Advanced** (8): EP-03, EP-04, EP-06, EP-09, EP-15, EP-17, EP-18, EP-28, EP-39
 
@@ -464,6 +484,6 @@ For each episode:
 
 ## Coverage check
 
-Every pattern DP-001 through DP-040 appears in at least one seed above
+Every pattern DP-001 through DP-042 appears in at least one seed above
 (verify with `grep -E 'DP-[0-9]{3}' episode-seeds.md | sort -u | wc -l`
-should equal 40).
+should equal 42).

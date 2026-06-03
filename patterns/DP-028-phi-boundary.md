@@ -12,7 +12,7 @@ introduced: 2026-04
 ## What it is
 
 A boundary contract for projects that touch Protected Health Information
-(PHI): <EpicVDI>, <SagaMail>, Epione EMR Assistant, and any clinic-side
+(PHI): EpicVDI, SagaMail, Epione EMR Assistant, and any clinic-side
 tools. PHI must never cross a trust boundary unencrypted, must never
 appear in logs, must never be sent to external APIs (including LLM
 providers), and must never land in `/tmp`. Enforced by PHIWatch.
@@ -45,7 +45,7 @@ boundary (cloud-API client refuses PHI-tagged data) is the only safe
 floor.
 
 ### Evidence that it works
-- 2026-05-09 <EpicVDI> audit found and fixed a "PHIPA rubber-stamp"
+- 2026-05-09 EpicVDI audit found and fixed a "PHIPA rubber-stamp"
   pattern (audit logs that approved access without checking).
 - Local Llama in place for all clinical analysis tasks; no PHI has
   reached the Anthropic API.
@@ -72,7 +72,7 @@ mechanical question, not a judgment call.
   HTTP calls.
 - Runtime: PHI-tainted variables tracked through call graph.
 
-**De-identification pipeline** (<EpicVDI>):
+**De-identification pipeline** (EpicVDI):
 - All PHI removed locally via 18-identifier check (HIPAA list adapted
   for PHIPA) before any operation crosses the boundary.
 - Local LLM (Llama via Ollama) used; PHI never touches Anthropic API.
@@ -80,13 +80,13 @@ mechanical question, not a judgment call.
 **Audit trail**: every PHI access logged to project-local audit DB,
 never to syslog or cloud sinks.
 
-**Threat model required** (annual review) for: <EpicVDI>, <SagaMail>,
-<CorpBooks>, <FinanceFlow>, Verscout (financial-PHI adjacent). Use
+**Threat model required** (annual review) for: EpicVDI, SagaMail,
+CorpBooks, FinanceFlow, Verscout (financial-PHI adjacent). Use
 `/threat-model` skill (STRIDE-lite).
 
 ## Example
 
-Building <EpicVDI>'s OCR pipeline:
+Building EpicVDI's OCR pipeline:
 ```python
 # Bad: sends image with PHI to cloud OCR
 response = google_vision_api.recognize(image_bytes)  # PHI-EXT-API-001
@@ -128,5 +128,5 @@ logger.info(f"Processed patient {patient.audit_id}")
   LLM path for PHI.
 - Screenshot cleanup: every screenshot taken on a PHI-touching app
   must be deleted within session, not left in `/tmp` or Desktop.
-- LESSONS (<EpicVDI> session): PHIPA audit trail was rubber-stamped
+- LESSONS (EpicVDI session): PHIPA audit trail was rubber-stamped
   initially; cold-read found gaps fixed in 2026-05.

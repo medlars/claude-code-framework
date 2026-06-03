@@ -31,7 +31,7 @@ snapshot + Stop verification).
 ### The problem we kept hitting
 "Done" meant whatever the engineer wanted it to mean. Sometimes "tests
 pass". Sometimes "compiles". Sometimes "deployed". Cross-project
-"done" was incomparable — <FinanceFlow>'s "done" was <MoeMoney>'s "barely
+"done" was incomparable — FinanceFlow's "done" was MoeMoney's "barely
 started".
 
 ### What we tried first (and why it didn't work)

@@ -70,7 +70,7 @@ to audit. The agent has no familiarity bias.
 
 ## Example
 
-The <Moonitor> cold-read (2026-05-30) — author had worked on the project
+The Moonitor cold-read (2026-05-30) — author had worked on the project
 for 3 months. Cold-read found:
 - `prune_old_items` defined but never called from any path
 - Apple ns timestamps multiplied by 1e9 (already in ns)

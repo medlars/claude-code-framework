@@ -24,7 +24,7 @@ to canonical).
 *The story of how this pattern came to exist and why it was chosen over alternatives.*
 
 ### The problem we kept hitting
-Project names were a mess. CIS stored "<FinanceFlow>", "financeflow",
+Project names were a mess. CIS stored "FinanceFlow", "financeflow",
 "finance-flow", and "ff" as different projects — same code, four
 different issue buckets. Cross-project queries broke. Aliases were
 ad-hoc per script.
@@ -41,7 +41,7 @@ resolves through `project_resolver.py`.
 
 ### Why this approach, not the obvious one
 *Why not use directory names directly?* Because directories use TitleCase
-(`<FinanceFlow>/`), CIS uses lowercase (`financeflow`), and audit skills
+(`FinanceFlow/`), CIS uses lowercase (`financeflow`), and audit skills
 use slugs (`financeflow-audit`). One file maps all three.
 
 ### Evidence that it works
@@ -52,7 +52,7 @@ use slugs (`financeflow-audit`). One file maps all three.
 
 Project names are referenced in: PM scripts, CEO config, CIS issues,
 hook matchers, skill `When This Skill Is Invoked` blocks, documentation,
-audit skill names. Without a canonical resolver, "<FinanceFlow>" vs
+audit skill names. Without a canonical resolver, "FinanceFlow" vs
 "financeflow" vs "FF" vs "finance-flow" creates silent gaps — CIS
 issues filed under one name aren't visible to the PM querying under
 another.
@@ -69,7 +69,7 @@ another.
       "root": "Verscout/desktop",
       "pm_script": "scripts/verscout-pm.py",
       "type": "python",
-      "github": "[your-username]/Verscout",
+      "github": "owner/Verscout",
       "audit_skill": "/verscout-audit",
       "surfaces": ["desktop", "marketing", "web"],
       "floor_exempt": false

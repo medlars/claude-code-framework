@@ -65,7 +65,7 @@ entry:
 ```markdown
 ## 2026-05-25 — Lowered COVERAGE_FLOOR from 85 → 80
 
-**Project**: <FinanceFlow>
+**Project**: FinanceFlow
 **File**: scripts/financeflow-pm.py
 **Change**: `COVERAGE_FLOOR = 85` → `COVERAGE_FLOOR = 80`
 **Reason**: New e2e test suite added 4k lines of fixtures that aren't

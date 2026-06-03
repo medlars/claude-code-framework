@@ -80,7 +80,7 @@ CLAUDE.md), so the next session has prior context.
 
 ## Example
 
-End of a long <FinanceFlow> session:
+End of a long FinanceFlow session:
 
 ```bash
 /rename ff-pre-insert-pipeline-fix-2026-05-30
@@ -114,7 +114,7 @@ Outputs:
   Format discipline matters.
 - Apple Notes >2500 chars hang the MCP. The size gate enforces
   pt.1/pt.2 splits at natural section boundaries.
-- LESSONS B-005: `Path.home()` not `~/` — applies to wiki
+- LESSONS B-005: `Path.home()` not `/Users/eiman/` — applies to wiki
   paths too.
 - Without rename: session names like "session_2026_05_31" make memory
   unsearchable.

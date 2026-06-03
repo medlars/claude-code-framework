@@ -126,7 +126,7 @@ Querying who depends on a rule:
 
 ```bash
 constitution why CON-039
-# → CON-039: No hardcoded ~/ paths
+# → CON-039: No hardcoded /Users/eiman/ paths
 #   Enforced by: no-hardcoded-paths.sh, hardcoded-path-in-content.sh
 #   Created: 2026-05-04
 #   Lessons: LESSONS 019, LESSONS 028

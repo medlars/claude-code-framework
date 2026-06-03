@@ -12,7 +12,7 @@ introduced: 2026-05
 ## What it is
 
 A workflow: every design pattern in this registry seeds at least one
-YouTube episode for the [Your Company] channel. The mandatory "YouTube episode
+YouTube episode for the Vohux channel. The mandatory "YouTube episode
 angle" section in each pattern file gives two pitches: tech-savvy
 (10-15 min) and lay audience (3-8 min). `categories/12-youtube-episodes/
 episode-seeds.md` aggregates the candidates.
@@ -22,7 +22,7 @@ episode-seeds.md` aggregates the candidates.
 *The story of how this pattern came to exist and why it was chosen over alternatives.*
 
 ### The problem we kept hitting
-The [Your Company] YouTube channel needs a steady stream of content. Coming up
+The Vohux YouTube channel needs a steady stream of content. Coming up
 with episode ideas from scratch every week is exhausting. Most of the
 ideas were already implicit in the engineering work — we just didn't
 extract them.
@@ -47,7 +47,7 @@ episode. Single source of truth.
 
 ## Why we use it
 
-The [Your Company] channel ("how a solo physician runs a software fleet with
+The Vohux channel ("how a solo physician runs a software fleet with
 Claude Code") needs a content backlog. Rather than improvising topics
 weekly, every engineering pattern becomes a video opportunity with the
 script pre-outlined in its pattern file.

@@ -12,7 +12,7 @@ introduced: 2026-04
 ## What it is
 
 Every project has a PM script at `{project}/scripts/{project}-pm.py`
-(<FinanceFlow>'s lives at `automation/comprehensive_pm_monitor.py`) that
+(FinanceFlow's lives at `automation/comprehensive_pm_monitor.py`) that
 follows a 14-part contract. The script is the project's contract with the
 rest of the fleet: it speaks a common grammar so the CEO can compose all
 PMs into one dashboard.

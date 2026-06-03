@@ -82,7 +82,7 @@ Each dimension produces a list of findings → CIS issues → fix backlog.
 
 ## Example
 
-Cold-read of <Moonitor> surfaced 6 bugs the author missed:
+Cold-read of Moonitor surfaced 6 bugs the author missed:
 - `prune_old_items` defined but never wired (dimension 7: operational)
 - Apple ns timestamps multiplied by 1e9 unnecessarily (dimension 4: data)
 - Two threads writing to SQLite without WAL (dimension 5/6: concurrency)
